@@ -1,0 +1,4 @@
+#pip installl -r requirements.txt
+#https://www.w3docs.com/snippets/css/how-to-import-google-fonts-in-css-file.html
+
+reflex==0.7.1
