@@ -13,6 +13,7 @@ from threading import Thread
 import socket
 #from conexion_sqliteEsp import Comunicacion  del proyecto Realice Original con QT6
 from .combd import Comunicacion  # Clase que se comunica con la Base de Datos sqlite
+import reflextest.constants as const  # acceder a las direeciones IP External o Internal como constantes
 
 # create an INET, STREAMing socket
 ##serversocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -28,8 +29,8 @@ class SockClientEsp8266():
         # datos=(sensor + " No Comunico")
         self.obj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         #self.host = '192.168.0.104'
-        self.host = '200.93.4.163'
-        self.port = 1002
+        self.host = const.IP
+        self.port = const.PORT
         numsensor = "1"
         self.base_datos = Comunicacion()
         try:
@@ -54,8 +55,8 @@ class SockClientEsp8266():
 
     def leerEsp(self):
         self.obj = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.host = '200.93.4.163'
-        self.port = 1002
+        self.host = const.IP
+        self.port = const.PORT
         try:
             self.fechahora = datetime.now()
             self.obj.connect((self.host, self.port))

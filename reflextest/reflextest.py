@@ -52,7 +52,7 @@ def index()-> rx.Component:
                     header(),
                     links(),
                         rx.vstack( #2
-                            rx.heading("Home Datos de Temperatura y Humedad", size="4"),
+                            rx.heading("HOME DATA: Temperatura y Humedad", size="4"),
                             ######### muy buena  #####################
                             rx.hstack(
                                 rx.foreach( State.columnasName,
